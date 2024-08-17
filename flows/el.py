@@ -15,8 +15,11 @@ def load(data):
     return seconds
 
 @flow
-def main():
+def main(thread: int, source_db: str, target_db: str):
     logger = get_run_logger()
+    logger.info(thread)
+    logger.info(source_db)
+    logger.info(target_db)
     data = extract()
     load(data)
 
