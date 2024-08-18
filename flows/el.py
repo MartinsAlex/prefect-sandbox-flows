@@ -14,7 +14,7 @@ def load(data):
     time.sleep(seconds)
     return seconds
 
-@flow(flow_run_name="extract_load")
+@flow(flow_run_name="extract_load_{target_db}")
 def main(thread: int, source_db: str, target_db: str):
     logger = get_run_logger()
     logger.info(thread)
